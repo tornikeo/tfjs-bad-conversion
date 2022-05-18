@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+</head>
+
+<body>
+
+    <script>
+        // tf.enableDebugMode()
+        const makeInput = () => {
+            let result = {
+                "feature":tf.tensor(['Class A'],shape=[1,1],dtype='string'),
+                // 'unknown': tf.tensor(3), 
+            }
+            return result;
+        }
+
+        let model = null;
+        async function load_model() {
+            console.log('Start model loading');
+            model = await tf.loadGraphModel(
+                'models/tfjs_model/model.json'
+            )
+            console.log('Warm up model');
+            let sample_input = makeInput();
+            let output = await model.executeAsync(sample_input)
+            output = Array.from(output.dataSync());
+            console.log(output); // This contains predicted price!
+            console.log('Model is loaded!');
+        }
+        load_model()
+    </script>
+</body>
+
+</html>
