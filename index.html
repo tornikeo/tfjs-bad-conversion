@@ -29,7 +29,7 @@
             )
             console.log('Warm up model');
             let sample_input = makeInput();
-            let output = await model.executeAsync(sample_input)
+            let output = await model.executeAsync(sample_input, ["feature"])
             output = Array.from(output.dataSync());
             console.log(output); // This contains predicted price!
             console.log('Model is loaded!');
