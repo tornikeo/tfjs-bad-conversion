@@ -1,4 +1,4 @@
-node_modules
-.parcel_cache
-.ipynb_checkpoints
-dist
+node_modules/
+.parcel-cache/
+.ipynb_checkpoints/
+dist/

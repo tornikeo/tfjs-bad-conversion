@@ -1,0 +1,27 @@
+{
+  "name": "tfjs-converter-issue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm parcel index.html --open --no-hmr --public-url / -p 1236"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tornikeo/tfjs-bad-conversion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tornikeo/tfjs-bad-conversion/issues"
+  },
+  "homepage": "https://github.com/tornikeo/tfjs-bad-conversion#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.17.0",
+    "parcel": "^2.5.0"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "process": "^0.11.10"
+  }
+}

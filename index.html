@@ -12,30 +12,33 @@
 <body>
 
     <script>
-        // tf.enableDebugMode()
-        const makeInput = () => {
-            let result = {
-                "feature":tf.tensor(['Class A'],shape=[1,1],dtype='string'),
-                // 'unknown': tf.tensor(3), 
-            }
-            return result;
-        }
+        // // tf.enableDebugMode()
+        // const makeInput = () => {
+        //     let result = {
+        //         "feature":tf.tensor(['Class A'],shape=[1,1],dtype='string'),
+        //         'unknown': tf.tensor(3), 
+        //     }
+        //     return result;
+        // }
 
-        let model = null;
-        async function load_model() {
-            console.log('Start model loading');
-            model = await tf.loadGraphModel(
-                'models/tfjs_model/model.json'
-            )
-            console.log('Warm up model');
-            let sample_input = makeInput();
-            let output = await model.executeAsync(sample_input, ["feature"])
-            output = Array.from(output.dataSync());
-            console.log(output); // This contains predicted price!
-            console.log('Model is loaded!');
-        }
-        load_model()
+        // let model = null;
+        // async function load_model() {
+        //     console.log('Start model loading');
+        //     model = await tf.loadGraphModel(
+        //         'models/tfjs_model/model.json'
+        //     )
+        //     console.log('Warm up model');
+        //     let sample_input = makeInput();
+        //     let output = await model.executeAsync(sample_input)
+        //     output = Array.from(output.dataSync());
+        //     console.log(output); // This contains predicted price!
+        //     console.log('Model is loaded!');
+        // }
+        // load_model()
     </script>
+
+    <script type="module" src="index.js"></script>
+
 </body>
 
 </html>
