@@ -103,8 +103,8 @@ async function loadModel() {
   // MODEL = await tf.loadGraphModel(MODEL_PATH); 
   MODEL = await Model.fromDir(MODEL_PATH)
   let inp = {
-    'Feature':'abcd',
-    "NumFeature":123,
+    'Feature':'Class A',
+    "NumFeature":12,
   }
   console.log(
     MODEL.predict(inp)
